@@ -48,3 +48,4 @@ public/js/bundle*
 packages/jalik-*
 media/
 settings-dev.json
+atom/
