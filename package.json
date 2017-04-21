@@ -9,11 +9,13 @@
   "author": "Alexander Razzhivin",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^6.7.7",
     "browser-sync": "*",
     "gulp": "*",
-    "gulp-autoprefixer": "*",
+    "gulp-postcss": "*",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
+    "postcss-pxtorem": "*",
     "susy": "*"
   }
 }

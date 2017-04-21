@@ -42,7 +42,7 @@ server/*.bundle.js
 public/js/bundle*
 
 *.map
-
+.magicindex.json
 .meteor/local
 .meteor/meteorite
 packages/jalik-*
