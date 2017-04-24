@@ -5,20 +5,22 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('autoprefixer');
 var browserSync = require('browser-sync');
 var pxtorem = require('postcss-pxtorem');
+var del  = require('del');
+var path = require('path');
 
 var srcDir = 'src';
 
 gulp.task('sass', function() {                  // Создаем таск Sass
 
   var processors = [
-       autoprefixer('> 5%', 'ie >= 9'),
+       autoprefixer('> 5%', 'ie >= 9', 'safari 5', 'ios 6', 'android 4'),
        pxtorem({
          rootValue: 10,
           propList: ['*']
        })
    ];
 
-  return gulp.src(srcDir+'/scss/**/*.+(scss|sass)')     // Берем источник
+  return gulp.src(srcDir+'/sass/**/*.+(scss|sass)')     // Берем источник
       .pipe(sourcemaps.init())                  // Инициализируем sourcemap для отладки
       .pipe(sass({
           outputStyle: 'nested',                // Возможные значения: nested, expanded, compact, compressed
@@ -42,11 +44,14 @@ gulp.task('browser-sync', function() {  // Создаем таск browser-sync
 
 
 gulp.task('watch', ['browser-sync', 'sass'], function() {
-    gulp.watch(srcDir+'/scss/**/*.+(scss|sass)', ['sass']); // Наблюдение за sass файлами
+    gulp.watch(srcDir+'/sass/**/*.+(scss|sass)', ['sass']); // Наблюдение за sass файлами
     gulp.watch(srcDir+'/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
     gulp.watch(srcDir+'/js/**/*.js', browserSync.reload); // Наблюдение за JS файлами в папке js
 
 });
 
-
-gulp.task('default', ["sass","watch"]);
+// Clean
+gulp.task('clean', function () {
+  return del([path.join(srcDir, "css")]);
+});
+gulp.task('default', ["clean","sass","watch"]);

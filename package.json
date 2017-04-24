@@ -16,6 +16,8 @@
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
     "postcss-pxtorem": "*",
-    "susy": "*"
-  }
+    "susy": "*",
+    "del": "*"
+  },
+  "dependencies": {}
 }
