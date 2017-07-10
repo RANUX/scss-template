@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "gulp-minify-css": "*",
-    "gulp-pug": "^3.3.0",
-    "pug": "^2.0.0-rc.2"
+    "gulp-pug": "*",
+    "pug": "*"
   }
 }
