@@ -1,0 +1,119 @@
+//
+// Simple alternative grid system
+//
+// Set pad to your value
+//
+// extra small screen width <576px
+$pad-esm: 2px
+
+// small screen width >= 576px
+$pad-sm: $pad-esm + 2
+
+// medium screen width >= 768px
+$pad-md: $pad-esm + 4
+
+// large  screen width >= 992px
+$pad-lg: $pad-esm + 8
+
+// extra large screen width >= 1200px
+$pad-xl: $pad-esm + 10
+
+$total-columns: 12
+$column-width: 100 / $total-columns
+
+// Calculate column with in percents
+// $n - col number
+@function grid-column-width($n)
+  @return ($column-width * $n * 1%)
+
+.grid
+  margin: 0 0 0 0
+
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+[class*='col-']
+  float: left
+  padding-right: $pad-esm
+
+  @media (min-width: 576px)
+    padding-right: $pad-sm
+
+  @media (min-width: 768px)
+    padding-right: $pad-md
+
+  @media (min-width: 992px)
+    padding-right: $pad-lg
+
+  @media (min-width: 1200px)
+    padding-right: $pad-xl
+
+  .grid &:last-of-type
+    padding-right: 0
+
+.col-1
+  width: grid-column-width(1)
+
+.col-2
+  width: grid-column-width(2)
+
+.col-3
+  width: grid-column-width(3)
+
+.col-4
+  width: grid-column-width(4)
+
+.col-5
+  width: grid-column-width(5)
+
+.col-6
+  width: grid-column-width(6)
+
+.col-7
+  width: grid-column-width(7)
+
+.col-8
+  width: grid-column-width(8)
+
+.col-9
+  width: grid-column-width(9)
+
+.col-10
+  width: grid-column-width(10)
+
+.col-11
+  width: grid-column-width(11)
+
+.col-12
+  width: 100%
+  margin-left: 0
+
+
+/* Opt-in outside padding */
+.grid-pad
+
+  padding: $pad-esm 0 $pad-esm $pad-esm
+  [class*='col-']:last-of-type
+    padding-right: $pad-esm
+
+  @media (min-width: 576px)
+    padding: $pad-sm 0 $pad-sm $pad-sm
+    [class*='col-']:last-of-type
+      padding-right: $pad-sm
+
+  @media (min-width: 768px)
+    padding: $pad-md 0 $pad-md $pad-md
+    [class*='col-']:last-of-type
+      padding-right: $pad-md
+
+  @media (min-width: 992px)
+    padding: $pad-lg 0 $pad-lg $pad-lg
+    [class*='col-']:last-of-type
+      padding-right: $pad-lg
+
+  @media (min-width: 1200px)
+    padding: $pad-xl 0 $pad-xl $pad-xl
+    [class*='col-']:last-of-type
+      padding-right: $pad-xl

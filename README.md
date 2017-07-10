@@ -12,7 +12,24 @@
 npm install
 
 ### Configure
-Open ```app/scss/base/*.scss``` and configure for your project needs.
+Open ```src/scss/base/*.scss``` and configure for your project needs.
+
+Watch and configure ```gulpfile.js``` for your needs
+
+### Susy
+Add imports at the beginning of bundle.sass:
+```css
+@import "susy"
+@import "susy-conf.scss"
+```
+
+### Mixins
+
+##### Fonts
+```css
++font-face('Lato', '/fonts/Lato-Thin', 100, normal, woff ttf svg)
+```
+
 
 
 ### Reference articles

@@ -9,15 +9,22 @@
   "author": "Alexander Razzhivin",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^6.7.7",
+    "autoprefixer": "*",
     "browser-sync": "*",
+    "del": "*",
     "gulp": "*",
+    "gulp-google-webfonts": "*",
     "gulp-postcss": "*",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
     "postcss-pxtorem": "*",
+    "sass-convert": "*",
     "susy": "*",
-    "del": "*"
+    "vinyl-fs": "*"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-minify-css": "*",
+    "gulp-pug": "^3.3.0",
+    "pug": "^2.0.0-rc.2"
+  }
 }
