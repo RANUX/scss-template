@@ -26,6 +26,11 @@ Add imports at the beginning of bundle.sass:
 ### Mixins
 
 ##### Fonts
+Get google fonts
+```bash
+gulp gfonts
+```
+Use fonts
 ```css
 +font-face('Lato', '/fonts/Lato-Thin', 100, normal, woff ttf svg)
 ```
